@@ -6,6 +6,7 @@ import { Route, Link } from 'react-router-dom';
 // Creating components in one page to save time
 // Would normally render each component in a seperate file
 const PageOneContainer = () => {
+
   return (
 
     <div>
@@ -16,6 +17,7 @@ const PageOneContainer = () => {
 }
 
 const PageTwoContainer = () => {
+
   return (
 
     <div>
@@ -25,14 +27,20 @@ const PageTwoContainer = () => {
     )  
 }
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
 
-      </div>
-    );
-  }
+//turned App into a functional component
+const App = () => {
+
+  return (
+
+    <main>
+
+      <Route exact path="/" component={PageOneContainer}/>
+      <Route exact path="/secondPageRoute" component={PageTwoContainer}/>
+
+    </main>
+
+    )
 }
 
 export default App;
