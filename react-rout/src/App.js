@@ -27,6 +27,21 @@ const PageTwoContainer = () => {
     )  
 }
 
+const HeaderLinks = () => {
+  
+  return (
+
+    <header>
+      <ul>
+        <li><a href='/'>Home</a></li>
+        <li><a href='/secondPageRoute'>Page Two</a></li>
+      </ul>
+
+    </header>
+
+    )
+}
+
 
 //turned App into a functional component
 const App = () => {
@@ -35,6 +50,7 @@ const App = () => {
 
     <main>
 
+      <HeaderLinks />
       <Route exact path="/" component={PageOneContainer}/>
       <Route exact path="/secondPageRoute" component={PageTwoContainer}/>
 
