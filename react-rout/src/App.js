@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch } from 'react-router-dom';
 
 // Creating components in one page to save time
 // Would normally render each component in a seperate file
@@ -42,6 +42,18 @@ const HeaderLinks = () => {
     )
 }
 
+const My404 = () => {
+
+  return (
+
+    <div>
+      You're Lost
+    </div>
+
+    )
+}
+
+//imported switch and created a 404 route
 
 //turned App into a functional component
 const App = () => {
@@ -51,8 +63,11 @@ const App = () => {
     <main>
 
       <HeaderLinks />
-      <Route exact path="/" component={PageOneContainer}/>
-      <Route exact path="/secondPageRoute" component={PageTwoContainer}/>
+      <Switch>
+        <Route exact path="/" component={PageOneContainer}/>
+        <Route exact path="/secondPageRoute" component={PageTwoContainer}/>
+        <Route path='*' component={My404}/>
+      </Switch>
 
     </main>
 
